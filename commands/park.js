@@ -44,8 +44,7 @@ export default async event => {
         t.body.contents[1].contents[1].contents[1].text = d.serviceTime // 開放時間
         t.body.contents[1].contents[2].contents[1].text = d.tel // 連絡電話
         t.body.contents[1].contents[3].contents[1].text = d.payex // 收費資訊
-        // 地圖網址
-        t.footer.contents[0].action.uri = `https://www.google.com/maps/search/?api=1&query=${d.EntranceCoord.EntrancecoordInfo[0].Xcod},${d.EntranceCoord.EntrancecoordInfo[0].Ycod}`
+        t.footer.contents[0].action.uri = `https://www.google.com/maps/search/?api=1&query=${d.EntranceCoord.EntrancecoordInfo[0].Xcod},${d.EntranceCoord.EntrancecoordInfo[0].Ycod}` // 地圖網址
         return t
       })
 
