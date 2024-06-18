@@ -2,17 +2,8 @@
 import 'dotenv/config'
 import linebot from 'linebot'
 // 引入commands裡的檔案，
-import { scheduleJob } from 'node-schedule'
-// HW
 import commandPark from './commands/park.js'
 
-// https://crontab.guru/#0_5_*_*_*
-// 設定排程，每天早上五點就會執行這個function來更新匯率，可以節省找資料的時間
-scheduleJob('0 5 * * *', () => {
-  usdtwd.update()
-})
-// 使啟動機器人的時候也會進行這個function
-usdtwd.update()
 // 設定機器人
 const bot = linebot({
   channelId: process.env.CHANNEL_ID,
