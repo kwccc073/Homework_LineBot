@@ -2,10 +2,7 @@
 import 'dotenv/config'
 import linebot from 'linebot'
 // 引入commands裡的檔案，
-import commandFE from './commands/fe.js'
-import commandUsd from './commands/usd.js'
 import { scheduleJob } from 'node-schedule'
-import * as usdtwd from './data/usdtwd.js'
 // HW
 import commandPark from './commands/park.js'
 
@@ -26,7 +23,7 @@ const bot = linebot({
 // 當機器人收到訊息時，執行{}內的程式碼
 // event 包含了訊息的類型、文字等（待編輯）
 bot.on('message', event => {
-// process.env.DEBUG的true為文字，要用''框起來
+  // process.env.DEBUG的true為文字，要用''框起來
   if (process.env.DEBUG === 'true') {
     console.log(event)
   }
